@@ -678,8 +678,8 @@
       "prompt": "{file:./prompts/D-Plan.txt}",
       "permission": {
         "read": "allow",
-        "edit": "allow",
-        "write": "allow",
+        "edit": "deny",
+        "write": "deny",
         "glob": "allow",
         "grep": "allow",
         "bash": "deny",
@@ -696,7 +696,7 @@
       "prompt": "{file:./prompts/D-Arch.txt}",
       "permission": {
         "read": "allow",
-        "write": "allow",
+        "write": "deny",
         "task": "deny",
         "bash": "deny",
         "glob": "deny",
@@ -710,7 +710,7 @@
       "prompt": "{file:./prompts/D-Tech.txt}",
       "permission": {
         "read": "allow",
-        "write": "allow",
+        "write": "deny",
         "task": "deny",
         "bash": "deny",
         "glob": "deny",
