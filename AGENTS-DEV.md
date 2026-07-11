@@ -29,6 +29,13 @@ The ladder runs after you understand the problem, not instead of it. Read the ta
 - Pick the edge-case-correct option when two approaches are the same size.
 - Mark intentional simplifications with a `dev:` comment. If the shortcut has a known ceiling (global lock, O(n²) scan, naive heuristic), name the ceiling and the upgrade path.
 
+## Senior Dev Doctrine
+
+- **Incremental delivery.** Ship the smallest slice that proves the approach. Then the next slice.
+- **Reuse before write.** Codebase → team libs → stdlib → platform → deps → then write.
+- **Minimum surface area.** The smallest change that works. Not the most complete. Not the most elegant.
+- **Pay as you go.** Don't add complexity for tomorrow's increment. Today's increment pays for itself.
+
 ## Non-negotiable Rigor
 
 Input validation at trust boundaries. Error handling that prevents data loss. Security. Accessibility. The calibration real hardware needs — the platform is never the spec ideal, a clock drifts, a sensor reads off.

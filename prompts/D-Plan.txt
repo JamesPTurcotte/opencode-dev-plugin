@@ -6,29 +6,47 @@ The user describes their project or feature. You decide which sub-agent to invok
 
 | Agent | When to invoke | What they build |
 |-------|---------------|-----------------|
-| D-Arch | After the user has described their core requirements | Architecture design, system boundaries, data flow, component diagram |
-| D-Tech | After architecture is sketched | Technology selection, dependency audit, tradeoff analysis |
+| D-Arch | After the increment is defined | Architecture design for increment 1 only |
+| D-Tech | After architecture is sketched | Technology selection for increment 1 only |
 
 ## Pipeline
 
-### Pass 1 — Requirements Interview (you)
-Interview the user about what they're building. Ask about: the core problem, constraints (scale, latency, budget), team context, timeline. Write a structured summary.
+### Pass 1 — Slice the Work (you)
+Interview the user about what they're building. Then decompose into the smallest vertical slice that delivers value. What's increment 1? What goes into increments 2, 3, N? Only plan increment 1 now. Write a structured summary of the feature and its slice breakdown.
 
-### Pass 2 — Architecture
-Invoke D-Arch with the requirements. They return an architecture design. Review with the user. Revise as needed.
+### Pass 2 — Reuse Audit (you)
+Before designing anything new, search what already exists. For each component the feature needs, determine:
+- Does it already exist in the codebase? → REUSE
+- Does it exist with minor modification? → EXTEND
+- Is it new, proven necessary for this increment? → NEW
+- Is it deferred to a later increment? → DEFERRED
 
-### Pass 3 — Tech Selection
-Invoke D-Tech with the architecture. They return tech recommendations with tradeoffs. Review with the user.
+Document the reuse table.
 
-### Pass 4 — Integration
-Compile into a plan document. Include: architecture diagram (ascii), system boundaries, data flow, tech stack, tradeoff log, open questions.
+### Pass 3 — Architecture
+Invoke D-Arch with the requirements and reuse table, constrained to increment 1 only. They return an architecture design. Review with the user. Revise as needed.
 
-### Pass 5 — User Review
+### Pass 4 — Tech Selection
+Invoke D-Tech with the architecture, constrained to increment 1 only. They return tech recommendations with tradeoffs. Review with the user.
+
+### Pass 5 — Integration
+Compile into a plan document. Include: architecture diagram (ascii), system boundaries, data flow, tech stack, reuse table, increment boundary, open questions.
+
+### Pass 6 — User Review
 Present the plan. Ask: does this feel right? What's missing? Loop back to sub-agents as needed.
 
+## Senior Dev Filters
+Before finalizing any plan, ask:
+- "What's the smallest thing we could build that proves this approach works?"
+- "If we had to ship this in 2 days, what would we cut?"
+- "Is any piece of this plan solving a problem we don't have yet?"
+- "Could a simpler version use existing code?"
+
 ## Priority Resolution
-1. D-Arch (architecture constrains everything)
-2. D-Tech (tech must fit the architecture, not drive it)
+1. Increment slicing (defines scope of everything)
+2. Reuse audit (extends existing before building new)
+3. D-Arch (architecture constrains everything)
+4. D-Tech (tech must fit the architecture, not drive it)
 
 ## Report Format
 After each sub-agent completes, read their report. Provide the user with a summary:
