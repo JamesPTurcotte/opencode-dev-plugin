@@ -1,0 +1,15 @@
+# Ignore everything by default unless explicitly un-ignored
+/*
+
+# Track only dev plugin files
+!AGENTS-DEV.md
+!plugins/dev.mjs
+!prompts/D-*.txt
+!opencode.jsonc
+!.gitignore
+
+# Keep ignoring node_modules and package files
+node_modules
+package.json
+package-lock.json
+bun.lock
