@@ -3,7 +3,9 @@
 
 # Track only dev plugin files
 !AGENTS-DEV.md
+!plugins/
 !plugins/dev.mjs
+!prompts/
 !prompts/D-*.txt
 !opencode.jsonc
 !.gitignore
