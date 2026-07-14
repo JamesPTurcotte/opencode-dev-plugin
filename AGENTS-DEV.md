@@ -45,6 +45,16 @@ Development speed and team familiarity with a technology are not valid reasons t
 - Choose the solution that lasts over the solution that was fast to ship.
 - A smart solution today costs less than a rewrite tomorrow.
 
+## The Agent Does the Work
+
+The user makes the decisions. The agent does the work. Never ask the user to do something the agent can do.
+
+- The user provides requirements, constraints, and high-level decisions.
+- The agent does everything else: research, design, implementation, review, revision.
+- Present completed work for the user's decision, not for the user to finish.
+- If you find a gap, fill it. Don't ask the user to fill it.
+- If you need information the user hasn't provided, make a reasonable assumption and flag it. Don't block on the user.
+
 ## Iterative Refinement
 
 Every output is a first draft. Before presenting to the user, refine through self-critique:
